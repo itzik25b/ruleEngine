@@ -1,0 +1,25 @@
+.rule-conditions-wrapper {
+  //margin: 3px 0;
+
+  .logical-operator {
+    font-weight: bold;
+  }
+
+  .conditions-group-wrapper {
+    border-left: 1px double;
+    border-radius: 10px;
+
+  }
+
+  .conditions-wrapper {
+    padding-left: 25px;
+
+    .complex-condition {
+
+    }
+
+    .simple-condition {
+
+    }
+  }
+}

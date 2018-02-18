@@ -1,0 +1,42 @@
+<div class="list-wrapper">
+  <mat-form-field class="filter">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    <ng-container matColumnDef="Rule type">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule Type</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ruleTypeID}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Rule type name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule type name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ruleTypeName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Rule sub type">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule sub type</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ruleSubTypeID}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Rule Action">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule Action</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.evalutedAction}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="No. of rules">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>No. of rules</mat-header-cell>
+      <mat-cell class="link" *matCellDef="let element; let i = index" (click)="ruleTypeClick(i)"> {{element.evaluatedRules.length}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Timestamp">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Evaluated timestamp</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.executionTimeStamp}} </mat-cell>
+    </ng-container>
+
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

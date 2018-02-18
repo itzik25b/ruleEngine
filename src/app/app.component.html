@@ -1,0 +1,15 @@
+<h2>Enter MID to see rule log in action</h2>
+
+
+<div class="search-area-wrapper">
+  <mat-form-field class="input-field">
+    <input matInput placeholder="Enter MID" value="">
+  </mat-form-field>
+  <button mat-fab color="primary" (click)="initRequest($event)">GO!</button>
+</div>
+
+<div class="main-content-wrapper">
+  <app-rule-engine-stepper></app-rule-engine-stepper>
+</div>
+
+

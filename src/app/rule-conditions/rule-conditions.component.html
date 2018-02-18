@@ -1,0 +1,18 @@
+<div class="rule-conditions-wrapper">
+  <div class="logical-operator" *ngIf="logicalOperator">{{logicalOperator}}</div>
+
+  <div class="conditions-group-wrapper">
+    <div class="conditions-wrapper" *ngFor="let condition of ruleConditions">
+      <div class="complex-condition" *ngIf="condition.conditions != null && condition.conditions.length > 0">
+        <app-rule-conditions [ruleConditions]="condition.conditions" [logicalOperator]="condition.logicalOperator"></app-rule-conditions>
+      </div>
+      <div class="simple-condition" *ngIf="condition.conditions == null || condition.conditions.length == 0">
+        <span class="left-operand" *ngIf="!dataService.toggleValues">{{condition.leftOperand}}</span>
+        <span class="left-operand-value" *ngIf="dataService.toggleValues">{{condition.leftOperandValue}}</span>
+        <span class="operator">{{condition.operator}}</span>
+        <span class="right-operand">{{condition.rightOperand}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+

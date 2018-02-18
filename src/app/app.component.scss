@@ -1,0 +1,23 @@
+h2 {
+  text-align: center;
+  margin: auto auto;
+}
+
+.search-area-wrapper {
+  margin: 3% auto 3%;
+  text-align: center;
+
+  .input-field {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  button {
+    margin-left: 4%;
+  }
+}
+
+.main-content-wrapper {
+  width: 60%;
+  margin: auto auto;
+}

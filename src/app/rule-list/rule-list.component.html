@@ -1,0 +1,48 @@
+<div class="list-wrapper">
+  <!--<div class="list-item" *ngFor="let ruleData of ruleList; let i = index" (click)="singleRuleClicked(i)" [ngClass]="{'rule-active': ruleData.ruleEvaluationResult}">-->
+    <!--<div class="info-wrapper">-->
+      <!--<span class="key-value-pair">-->
+        <!--<span class="key">Rule name:</span>-->
+        <!--<span class="value">{{ruleData.ruleName}}</span>-->
+      <!--</span>-->
+
+      <!--<span class="key-value-pair">-->
+        <!--<span class="key">Rule action:</span>-->
+        <!--<span class="value">{{ruleData.ruleAction}}</span>-->
+      <!--</span>-->
+
+      <!--<span class="key-value-pair">-->
+        <!--<span class="key">Rule activated:</span>-->
+        <!--<span class="value">{{ruleData.ruleEvaluationResult}}</span>-->
+      <!--</span>-->
+
+    <!--</div>-->
+    <!--<div class="continue-symbol"><i class="material-icons">keyboard_arrow_right</i></div>-->
+  <!--</div>-->
+
+  <mat-form-field class="filter">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    <ng-container matColumnDef="Rule name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule name</mat-header-cell>
+      <mat-cell class="link" *matCellDef="let element; let i = index" (click)="singleRuleClicked(i)"> {{element.ruleName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Rule action">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule action</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ruleAction}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Rule activated">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule activated</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="rule-activation" [ngClass]="{'true' : element.ruleEvaluationResult}"> {{element.ruleEvaluationResult}} </mat-cell>
+    </ng-container>
+
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

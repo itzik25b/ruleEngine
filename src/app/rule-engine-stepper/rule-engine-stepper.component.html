@@ -1,0 +1,17 @@
+<mat-horizontal-stepper [selectedIndex]="stepperIdx" (selectionChange)="stepChanged($event)">
+  <mat-step>
+    <ng-template matStepLabel>Rule types</ng-template>
+    <app-rule-types-list (ruleTypeSelected)="onRuleTypeSelected($event)"></app-rule-types-list>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Evaluated rules</ng-template>
+    <app-rule-list *ngIf="ruleList" [ruleList]="ruleList" (singleRuleClick)="onSingleRuleClick($event)"></app-rule-list>
+    <span class="missing-info-alert" *ngIf="!ruleList">Choose rule type first!</span>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Singe rule conditions</ng-template>
+    <mat-slide-toggle *ngIf="singleRuleConditions" (change)="toggleValues()">Toggle Values</mat-slide-toggle>
+    <app-rule-conditions *ngIf="singleRuleConditions" [ruleConditions]="singleRuleConditions.conditions" [logicalOperator]="singleRuleConditions.logicalOperator"></app-rule-conditions>
+    <span class="missing-info-alert" *ngIf="!ruleList">Choose rule name first!</span>
+  </mat-step>
+</mat-horizontal-stepper>

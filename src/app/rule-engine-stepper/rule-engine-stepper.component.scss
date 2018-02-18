@@ -1,0 +1,15 @@
+::ng-deep .mat-step-header .mat-step-icon,
+::ng-deep .mat-step-header .mat-step-icon-not-touched {
+  display: none;
+}
+
+::ng-deep .mat-step-header .mat-step-label-selected {
+  transition: all 0.2s linear;
+  box-shadow: 0 1px 0px 0px blue;
+}
+
+.missing-info-alert {
+  display: block;
+  margin-top: 5%;
+  text-align: center;
+}
