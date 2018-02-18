@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+.link {
+  color: #673ab7;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .list-wrapper {
   padding: 2px 2px 8px;

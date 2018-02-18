@@ -7,11 +7,12 @@ import {DataServiceService} from './data-service.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor() {
+  data = undefined;
+
+  constructor(private dataService: DataServiceService) {
   }
 
-  initRequest($event) {
-    $event.preventDefault();
-    console.log('sss');
+  initRequest(mid) {
+    this.dataService.getData(mid).subscribe(data => this.data = data['rulesProcessing']);
   }
 }

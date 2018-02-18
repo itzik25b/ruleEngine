@@ -14,6 +14,7 @@ import {RuleListComponent} from './rule-list/rule-list.component';
 import { RuleConditionsComponent } from './rule-conditions/rule-conditions.component';
 import {ConditionsBuilderService} from './conditions-builder.service';
 import {MatTableModule} from '@angular/material/table';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -26,6 +27,7 @@ import {MatTableModule} from '@angular/material/table';
     RuleConditionsComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     MatInputModule,
     MatButtonModule,

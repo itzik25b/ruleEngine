@@ -8,7 +8,6 @@
   .conditions-group-wrapper {
     border-left: 1px double;
     border-radius: 10px;
-
   }
 
   .conditions-wrapper {
@@ -19,7 +18,10 @@
     }
 
     .simple-condition {
-
+      .left-operand-value {
+        color: #673ab7;
+        font-weight: bold;
+      }
     }
   }
 }

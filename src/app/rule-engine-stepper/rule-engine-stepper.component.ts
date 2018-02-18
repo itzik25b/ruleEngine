@@ -7,16 +7,18 @@ import {DataServiceService} from '../data-service.service';
   templateUrl: './rule-engine-stepper.component.html',
   styleUrls: ['./rule-engine-stepper.component.scss']
 })
-export class RuleEngineStepperComponent implements OnInit {
+export class RuleEngineStepperComponent implements OnInit{
+  @Input() data;
+
   stepperIdx = 0;
+  ruleTypes = undefined;
   ruleList = undefined;
   singleRuleConditions = undefined;
 
-  constructor(private dataService: DataServiceService) {
-
-  }
+  constructor(private dataService: DataServiceService) {}
 
   ngOnInit() {
+    this.ruleTypes = this.data;
   }
 
   toggleValues() {

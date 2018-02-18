@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
-import {DataServiceService} from '../data-service.service';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
@@ -7,18 +6,20 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
   templateUrl: './rule-types-list.component.html',
   styleUrls: ['./rule-types-list.component.scss']
 })
-export class RuleTypesListComponent implements AfterViewInit {
-  ruleTypesList;
+export class RuleTypesListComponent implements OnInit, AfterViewInit {
   dataSource;
   displayedColumns = ['Rule type', 'Rule type name', 'Rule sub type', 'Rule Action', 'No. of rules', 'Timestamp'];
+  @Input() ruleTypesList;
   @Output() ruleTypeSelected: EventEmitter<any>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(dataService: DataServiceService) {
-    this.ruleTypesList = dataService.getData().rulesProcessing;
+  constructor() {
     this.ruleTypeSelected = new EventEmitter<any>();
+  }
+
+  ngOnInit() {
     this.dataSource = new MatTableDataSource<Element>(this.ruleTypesList);
   }
 

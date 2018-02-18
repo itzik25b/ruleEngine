@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class DataServiceService {
+  configUrl = 'assets/mock.json';
   toggleValues = false;
   mock = {
     'rulesProcessing': [
@@ -183,10 +185,12 @@ export class DataServiceService {
     ]
 
   };
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getData() {
-    return this.mock;
+  getData(mid) {
+    // return this.mock;
+    const params = new HttpParams().set('mid', mid);
+    return this.http.get(this.configUrl, {params: params});
   }
 
   toggleValue() {
