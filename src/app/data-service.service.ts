@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class DataServiceService {
-  configUrl = 'http://naamab-hrdt.fundtech.isr:8080/YouRule/services/ruletypes/';
+  configUrl = 'http://localhost:8080/YouRule/services/ruletypes/';
   toggleValues = false;
   mock = {
     'rulesProcessing': [
