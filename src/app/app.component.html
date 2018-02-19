@@ -1,3 +1,4 @@
+<img src="../assets/analyzer.png">
 <div class="search-area-wrapper">
   <mat-form-field class="input-field">
     <input #input matInput placeholder="Enter MID">
@@ -6,7 +7,7 @@
 </div>
 
 <div class="main-content-wrapper">
-  <h3 *ngIf="!data">Enter MID and click GO! to see the magic</h3>
+  <!--<h3 *ngIf="!data">Enter payment’s ID to see Engine Rule Process</h3>-->
   <app-rule-engine-stepper *ngIf="data" [data]="data"></app-rule-engine-stepper>
 </div>
 

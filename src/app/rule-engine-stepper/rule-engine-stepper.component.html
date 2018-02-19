@@ -1,6 +1,6 @@
 <mat-horizontal-stepper [selectedIndex]="stepperIdx" (selectionChange)="stepChanged($event)">
   <mat-step>
-    <ng-template matStepLabel>Rule types</ng-template>
+    <ng-template matStepLabel>Rules Categories</ng-template>
     <app-rule-types-list *ngIf="ruleTypes" [ruleTypesList]="ruleTypes" (ruleTypeSelected)="onRuleTypeSelected($event)"></app-rule-types-list>
   </mat-step>
   <mat-step>

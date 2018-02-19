@@ -8,17 +8,17 @@
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
     <ng-container matColumnDef="Rule type">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule Type</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule Category ID</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.ruleTypeID}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Rule type name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule type name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule Category</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.ruleTypeName}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="Rule sub type">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule sub type</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Rule Sub Category</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.ruleSubTypeID}} </mat-cell>
     </ng-container>
 
@@ -33,7 +33,7 @@
     </ng-container>
 
     <ng-container matColumnDef="Timestamp">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Evaluated timestamp</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Time Stamp</mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.executionTimeStamp}} </mat-cell>
     </ng-container>
 
