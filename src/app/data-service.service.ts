@@ -3,7 +3,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class DataServiceService {
-  configUrl = 'assets/mock.json';
+  configUrl = 'http://naamab-hrdt.fundtech.isr:8080/YouRule/services/ruletypes/';
   toggleValues = false;
   mock = {
     'rulesProcessing': [
@@ -189,8 +189,8 @@ export class DataServiceService {
 
   getData(mid) {
     // return this.mock;
-    const params = new HttpParams().set('mid', mid);
-    return this.http.get(this.configUrl, {params: params});
+    // const params = new HttpParams().set('mid', mid);
+    return this.http.get(this.configUrl + mid);
   }
 
   toggleValue() {
